@@ -1,0 +1,7 @@
+{
+  "name": "UNICEU-Projeto-Integrador-III",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
