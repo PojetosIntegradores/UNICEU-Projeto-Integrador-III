@@ -7,7 +7,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" style="background-image: url(../../assets/img/fundo_de_tela_app.jpg);width: 100%;">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">{{ folder }}</ion-title>
@@ -15,7 +15,34 @@
   </ion-header>
 
   <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ng-container *ngTemplateOutlet="selecionaTela(folder);">
+      This text is not displayed
+    </ng-container> 
   </div>
 </ion-content>
+
+
+<ng-template #avaliacoesTemplate>
+  <app-avaliacoes></app-avaliacoes>
+</ng-template>
+
+<ng-template #carrosTemplate>
+  <app-carros></app-carros>
+</ng-template>
+
+
+<ng-template #favoritosTemplate>
+  <app-favoritos></app-favoritos>
+</ng-template>
+
+<ng-template #mecanicasTemplate>
+  <app-mecanicas></app-mecanicas>
+</ng-template>
+
+<ng-template #procedimentosTemplate>
+  <app-procedimentos></app-procedimentos>
+</ng-template>
+
+<ng-template #reclamacoesTemplate>
+  <app-reclamacoes></app-reclamacoes>
+</ng-template>

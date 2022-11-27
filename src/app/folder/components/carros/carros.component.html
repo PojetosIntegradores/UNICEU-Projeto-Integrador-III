@@ -1,3 +1,17 @@
-<p>
-  carros works!
-</p>
+
+<ng-container *ngTemplateOutlet="setaTemplate(carrosTela);">
+  This text is not displayed
+</ng-container>
+
+<ng-template #detalhesTemplate>
+  <app-carros-detalhes></app-carros-detalhes>
+</ng-template>
+
+<ng-template #listaTemplate>
+  <app-carros-lista [carrosTela]="carrosDetalhe" (setaBotao)="setaTela($event);"></app-carros-lista>
+</ng-template>
+
+<ng-template #inserirTemplate>
+  <app-carros-inserir></app-carros-inserir>
+</ng-template>
+<ion-button (click)="setaTela(carrosBotao);">{{carrosBotao}}</ion-button>
