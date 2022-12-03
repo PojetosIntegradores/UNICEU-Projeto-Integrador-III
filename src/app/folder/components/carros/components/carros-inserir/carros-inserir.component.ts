@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { CrudServiceService } from 'src/app/services/crud-service.service';
 
 @Component({
   selector: 'app-carros-inserir',
@@ -7,8 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarrosInserirComponent implements OnInit {
 
-  constructor() { }
+  @Input() paramsApi:any;
+  @Output() retorno = new EventEmitter<string>();
 
-  ngOnInit() {}
+  constructor(private service: CrudServiceService) { }
 
+  product: any = {
+    name: '',
+    price: null
+  }
+
+  ngOnInit(): void {
+
+  }
+
+  createPoduct(): void {
+    this.service.create(this.product).subscribe(() => {
+      this.service.presentToast('top', 'Salvo com sucesso!!!')
+    })
+  }
+
+  cancel(): void {
+  }
 }
