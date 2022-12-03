@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { CrudEnum } from 'src/app/folder/folder.enum';
 
 @Component({
   selector: 'app-mecanicas-lista',
@@ -7,8 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MecanicasListaComponent implements OnInit {
 
+  @Input() tela:string;
+  @Output() setaBotao = new EventEmitter<string>();
+
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
+  setaTela() {
+    this.setaBotao.emit(CrudEnum.DETALHE);
+  }
 }

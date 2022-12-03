@@ -16,6 +16,9 @@ import { ReclamacoesComponent } from './components/reclamacoes/reclamacoes.compo
 import { CarrosDetalhesComponent } from './components/carros/components/carros-detalhes/carros-detalhes.component';
 import { CarrosListaComponent } from './components/carros/components/carros-lista/carros-lista.component';
 import { CarrosInserirComponent } from './components/carros/components/carros-inserir/carros-inserir.component';
+import { MecanicasInserirComponent } from './components/mecanicas/components/mecanicas-inserir/mecanicas-inserir.component';
+import { MecanicasDetalesComponent } from './components/mecanicas/components/mecanicas-detales/mecanicas-detales.component';
+import { MecanicasListaComponent } from './components/mecanicas/components/mecanicas-lista/mecanicas-lista.component';
 
 @NgModule({
   imports: [
@@ -34,7 +37,10 @@ import { CarrosInserirComponent } from './components/carros/components/carros-in
     ReclamacoesComponent,
     CarrosDetalhesComponent,
     CarrosListaComponent,
-    CarrosInserirComponent
+    CarrosInserirComponent,
+    MecanicasDetalesComponent,
+    MecanicasInserirComponent,
+    MecanicasListaComponent,
   ]
 })
 export class FolderPageModule {}
