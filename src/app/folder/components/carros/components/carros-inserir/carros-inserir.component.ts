@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { CrudEnum } from 'src/app/folder/folder.enum';
 import { CrudServiceService } from 'src/app/services/crud-service.service';
 
@@ -9,7 +9,6 @@ import { CrudServiceService } from 'src/app/services/crud-service.service';
 })
 export class CarrosInserirComponent implements OnInit {
 
-  @Input() paramsApi:any;
   @Output() retorno = new EventEmitter<string>();
 
   constructor(private service: CrudServiceService) { }
@@ -34,5 +33,6 @@ export class CarrosInserirComponent implements OnInit {
   }
 
   cancel(): void {
+    this.retorno.emit(CrudEnum.LISTA);
   }
 }
