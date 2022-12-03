@@ -1,12 +1,11 @@
 <ion-card>
-  <img alt="Silhouette of mountains" src="https://www.toyota.com.br/wp-content/themes/toyota/ciclo-toyota/carros/corolla_gli_040_carPage_mobile.png" />
+  <img alt="Silhouette of mountains" [src]="carro?.imgLink" />
   <ion-card-header>
-    <ion-card-title>Corolla GLi</ion-card-title>
-    <ion-card-subtitle>MODELO 2023</ion-card-subtitle>
+    <ion-card-title>{{ carro?.name }}</ion-card-title>
+    <ion-card-subtitle>{{ carro?.name }} {{ carro?.ano }}</ion-card-subtitle>
   </ion-card-header>
 
   <ion-card-content>
-    <strong>Descrição</strong> MOTOR: 2.0L Dual VVT-iE 16V DOHC Flex (Dynamic Force), com 177 cavalos de potência e 21,4 Kgf.m de torque (abastecido 100% com etanol)².
-    TRANSMISSÃO: Automática - Direct Shift CVT com modo sequencial de dez velocidades.
+    <strong>Descrição</strong> {{ carro?.descricao }}
   </ion-card-content>
 </ion-card>

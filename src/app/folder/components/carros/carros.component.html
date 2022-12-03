@@ -12,6 +12,6 @@
 </ng-template>
 
 <ng-template #inserirTemplate>
-  <app-carros-inserir></app-carros-inserir>
+  <app-carros-inserir (retorno)="setaTela($event);"></app-carros-inserir>
 </ng-template>
 <ion-button (click)="setaTela(carrosBotao);">{{carrosBotao}}</ion-button>

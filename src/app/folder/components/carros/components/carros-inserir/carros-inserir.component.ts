@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { CrudEnum } from 'src/app/folder/folder.enum';
 import { CrudServiceService } from 'src/app/services/crud-service.service';
 
 @Component({
@@ -15,7 +16,10 @@ export class CarrosInserirComponent implements OnInit {
 
   product: any = {
     name: '',
-    price: null
+    modelo: '',
+    ano: '',
+    descricao: '',
+    imgLink: ''
   }
 
   ngOnInit(): void {
@@ -23,8 +27,9 @@ export class CarrosInserirComponent implements OnInit {
   }
 
   createPoduct(): void {
-    this.service.create(this.product).subscribe(() => {
-      this.service.presentToast('top', 'Salvo com sucesso!!!')
+    this.service.create(this.product, 'carros').subscribe(() => {
+      this.service.presentToast('top', 'Salvo com sucesso!!!');
+      this.retorno.emit(CrudEnum.LISTA);
     })
   }
 

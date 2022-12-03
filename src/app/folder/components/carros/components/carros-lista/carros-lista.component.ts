@@ -15,14 +15,15 @@ export class CarrosListaComponent implements OnInit {
   constructor(private service: CrudServiceService) { }
 
   ngOnInit() {
-    this.service.parametroComponet = 'carros';
-    this.service.read().subscribe(carros =>{
-      this.carros = carros
+    this.service.read('carros').subscribe(carros =>{
+      this.carros = carros;
       console.log(carros);
     })
   }
 
-  setaTela() {
+  setaTela(event?: any) {
+    console.log(event);
+    this.service.id = event;
     this.setaBotao.emit(CrudEnum.DETALHE);
   }
 

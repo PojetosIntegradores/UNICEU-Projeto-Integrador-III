@@ -11,7 +11,7 @@ import { ToastController } from '@ionic/angular';
 export class CrudServiceService {
 
   baseUrl = env.baseUrl
-  parametroComponet: string;
+  id:any;
 
   constructor(
     private http: HttpClient,
@@ -22,12 +22,12 @@ export class CrudServiceService {
   /* Observable Padrão baseado em evento,
   Create recebe o post atravez do parametro `product`
   */
-  retornaUrl() {
-    let url = this.baseUrl + this.parametroComponet;
+  retornaUrl(complementoUrl:string) {
+    let url = this.baseUrl + complementoUrl;
     return url
   }
-  create(params: any): Observable<any> {
-    return this.http.post<any>(this.retornaUrl(), params).pipe(
+  create(params: any, urlParams:string): Observable<any> {
+    return this.http.post<any>(this.retornaUrl(urlParams), params).pipe(
       map((obj) => obj),
       catchError(e => this.errorHandler(e))
     )
@@ -35,33 +35,33 @@ export class CrudServiceService {
   
   /* Read retorna um get como array da api 
   */
-  read(): Observable<any[]> {
-    console.log(this.retornaUrl());
-    return this.http.get<any[]>(this.retornaUrl()).pipe(
+  read(urlParams:string): Observable<any[]> {
+    console.log(this.retornaUrl(urlParams));
+    return this.http.get<any[]>(this.retornaUrl(urlParams)).pipe(
       map((obj) => obj),
       catchError(e => this.errorHandler(e))
     )
   }
 
   /* Para pegar o id do produto */
-  readById(id: number): Observable<any> {
-    const url = `${this.retornaUrl()}/${id}`
+  readById(id: number, urlParams:string): Observable<any> {
+    const url = `${this.retornaUrl(urlParams)}/${id}`
     return this.http.get<any>(url).pipe(
       map((obj) => obj),
       catchError(e => this.errorHandler(e))
     )
   }
 
-  update(parms: any): Observable<any> {
-    const url = `${this.retornaUrl()}/${parms.id}`
+  update(parms: any, urlParams:string): Observable<any> {
+    const url = `${this.retornaUrl(urlParams)}/${parms.id}`
     return this.http.put<any>(url, parms).pipe(
       map((obj) => obj),
       catchError(e => this.errorHandler(e))
     )
   }
 
-  delete(id: number): Observable<any> {
-    const url = `${this.retornaUrl()}/${id}`
+  delete(id: number, urlParams:string): Observable<any> {
+    const url = `${this.retornaUrl(urlParams)}/${id}`
     return this.http.delete<any>(url).pipe(
       map((obj) => obj),
       catchError(e => this.errorHandler(e))

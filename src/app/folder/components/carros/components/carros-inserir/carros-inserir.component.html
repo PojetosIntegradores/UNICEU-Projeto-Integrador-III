@@ -7,31 +7,31 @@
     <ion-list>
       <ion-item>
         <ion-label position="floating">Nome do Auto</ion-label>
-        <ion-input placeholder="Fiat Uno"></ion-input>
+        <ion-input placeholder="Fiat Uno" [(ngModel)]="product.name"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="floating">Modelo</ion-label>
-        <ion-input placeholder="Mille"></ion-input>
+        <ion-input placeholder="Mille" [(ngModel)]="product.modelo"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="floating">Ano</ion-label>
-        <ion-input placeholder="2010"></ion-input>
+        <ion-input placeholder="2010" [(ngModel)]="product.ano"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="floating">Descrição</ion-label>
-        <ion-input placeholder="motor 1.6 flex"></ion-input>
+        <ion-input placeholder="motor 1.6 flex" [(ngModel)]="product.descricao"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="floating">Link da imagem do auto</ion-label>
-        <ion-input placeholder="Aqui você cola o link da imagem no google"></ion-input>
+        <ion-input placeholder="Aqui você cola o link da imagem no google" [(ngModel)]="product.imgLink"></ion-input>
       </ion-item>
 
     </ion-list>
-    <ion-button>
+    <ion-button (click)="createPoduct();">
       Inserir Auto
       <ion-icon slot="end" name="send"></ion-icon>
     </ion-button>
