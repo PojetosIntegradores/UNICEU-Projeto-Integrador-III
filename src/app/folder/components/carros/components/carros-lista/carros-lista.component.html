@@ -7,10 +7,10 @@
     <ion-list>
       <ion-item *ngFor="let carro of carros">
         <ion-thumbnail slot="start">
-          <img alt="Silhouette of mountains" [src]="carro.imgLink" />
+          <img alt="Silhouette of mountains" [src]="carro?.imgLink" />
         </ion-thumbnail>
-        <ion-label>{{carro.name}}</ion-label>
-        <ion-button (click)="setaTela(carro.id);">{{carrosTela}}</ion-button>
+        <ion-label>{{carro?.name}}</ion-label>
+        <ion-button (click)="setaTela(carro?.id);">{{carrosTela}}</ion-button>
       </ion-item>
     </ion-list>
   </ion-card-content>

@@ -30,14 +30,16 @@ import { MecanicasListaComponent } from './components/mecanicas/components/mecan
   declarations: [
     FolderPage,
     AvaliacoesComponent,
-    CarrosComponent,
     FavoritosComponent,
-    MecanicasComponent,
     ProcedimentosComponent,
     ReclamacoesComponent,
+    
+    CarrosComponent,
     CarrosDetalhesComponent,
     CarrosListaComponent,
     CarrosInserirComponent,
+    
+    MecanicasComponent,
     MecanicasDetalesComponent,
     MecanicasInserirComponent,
     MecanicasListaComponent,
