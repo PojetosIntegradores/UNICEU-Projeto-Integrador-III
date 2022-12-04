@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { CrudEnum } from 'src/app/folder/folder.enum';
 import { CrudServiceService } from 'src/app/services/crud-service.service';
 
@@ -7,13 +7,24 @@ import { CrudServiceService } from 'src/app/services/crud-service.service';
   templateUrl: './procedimentos-inserir.component.html',
   styleUrls: ['./procedimentos-inserir.component.scss'],
 })
-export class ProcedimentosInserirComponent {
+export class ProcedimentosInserirComponent implements OnInit {
 
   @Output() retorno = new EventEmitter<string>();
   carros:any;
   mecanicas:any;
 
   constructor(private service: CrudServiceService) { }
+
+  ngOnInit(): void {
+    this.service.read('carros').subscribe(carros =>{
+      this.carros = carros;
+      console.log(carros);
+    });
+    this.service.read('mecanicas').subscribe(mecanicas =>{
+      this.mecanicas = mecanicas;
+      console.log(mecanicas);
+    });
+  }
 
   product: any = {
     name: '',
@@ -24,18 +35,10 @@ export class ProcedimentosInserirComponent {
   }
 
   createPoduct(): void {
-    this.service.create(this.product, 'mecanicas').subscribe(() => {
+    this.service.create(this.product, 'procedimentos').subscribe(() => {
       this.service.presentToast('top', 'Salvo com sucesso!!!');
       this.retorno.emit(CrudEnum.LISTA);
     });
-    this.service.read('carros').subscribe(carros =>{
-      this.carros = carros;
-      console.log(carros);
-    })
-    this.service.read('mecanicas').subscribe(mecanicas =>{
-      this.mecanicas = mecanicas;
-      console.log(mecanicas);
-    })
   }
 
   cancel(): void {
