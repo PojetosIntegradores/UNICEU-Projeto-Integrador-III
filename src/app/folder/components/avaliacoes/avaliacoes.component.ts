@@ -16,8 +16,6 @@ export class AvaliacoesComponent implements OnInit {
   @ViewChild('inserirTemplate', { static:true }) inserirTemplate:TemplateRef<any>;
   @ViewChild('detalhesTemplate', { static:true }) detalhesTemplate:TemplateRef<any>;
 
-  constructor() { }
-
   ngOnInit() {
     this.selecionaTela(CrudEnum.LISTA);
   }

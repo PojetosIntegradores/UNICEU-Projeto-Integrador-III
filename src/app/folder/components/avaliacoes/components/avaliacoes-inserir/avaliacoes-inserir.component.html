@@ -1,33 +1,33 @@
 <ion-card>
   <ion-card-header>
-    <ion-card-title>Insira o Automovel, modelo e descrição</ion-card-title>
-    <ion-card-subtitle>Aqui você pode inserir o automovel que deseja compartilhar informações</ion-card-subtitle>
+    <ion-card-title>Insira a avalição dos servços realizados</ion-card-title>
+    <ion-card-subtitle>Aqui você pode compartilhar informações sobre os pretadoes de serviços</ion-card-subtitle>
   </ion-card-header>
   <ion-card-content>
     <ion-list>
       <ion-item>
-        <ion-label position="floating">Nome do Auto</ion-label>
-        <ion-input placeholder="Fiat Uno" [(ngModel)]="product.name"></ion-input>
+        <ion-select interface="popover" placeholder="Selecione a mecenica de preferencia" [(ngModel)]="product.mecanica">
+          <ion-select-option *ngFor="let mecanica of mecanicas" [value]="mecanica?.name">{{ mecanica?.name }}</ion-select-option>
+        </ion-select>
       </ion-item>
 
       <ion-item>
-        <ion-label position="floating">Modelo</ion-label>
-        <ion-input placeholder="Mille" [(ngModel)]="product.modelo"></ion-input>
+        <ion-select interface="popover" placeholder="Selecione a mecenica de preferencia" [(ngModel)]="product.procedimento">
+          <ion-select-option *ngFor="let procedimento of procedimentos" [value]="procedimento?.name">{{ procedimento?.name }}</ion-select-option>
+        </ion-select>
       </ion-item>
-
+      
       <ion-item>
-        <ion-label position="floating">Ano</ion-label>
-        <ion-input placeholder="2010" [(ngModel)]="product.ano"></ion-input>
+        <ion-select interface="popover" placeholder="Selecione a nota desejada" [(ngModel)]="product.nota">
+          <ion-select-option *ngFor="let mecanica of mecanicas" value="Insatisfeito">Insatisfeito</ion-select-option>
+          <ion-select-option *ngFor="let mecanica of mecanicas" value="Satisfeito">Satisfeito</ion-select-option>
+          <ion-select-option *ngFor="let mecanica of mecanicas" value="Muito Satisfeito">Muito Satisfeito</ion-select-option>
+        </ion-select>
       </ion-item>
 
       <ion-item>
         <ion-label position="floating">Descrição</ion-label>
-        <ion-input placeholder="motor 1.6 flex" [(ngModel)]="product.descricao"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label position="floating">Link da imagem do auto</ion-label>
-        <ion-input placeholder="Aqui você cola o link da imagem no google" [(ngModel)]="product.imgLink"></ion-input>
+        <ion-input placeholder="Bom ou mau atendimento e etc..." [(ngModel)]="product.descricao"></ion-input>
       </ion-item>
 
     </ion-list>

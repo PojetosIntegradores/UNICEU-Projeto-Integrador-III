@@ -7,9 +7,14 @@
     <ion-list>
       <ion-item *ngFor="let carro of carros">
         <ion-thumbnail slot="start">
-          <img alt="Silhouette of mountains" [src]="carro?.imgLink" />
+          <img alt="Silhouette of mountains" src="https://png.pngtree.com/element_origin_min_pic/17/03/05/cd79fda9cf21aa4994e5ebfdc53842e8.jpg" />
         </ion-thumbnail>
-        <ion-label>{{carro?.name}}</ion-label>
+        <ion-label>
+          <ion-icon name="heart-empty" *ngIf="carro?.nota == 'Insatisfeito'"></ion-icon>
+          <ion-icon name="heart-half" *ngIf="carro?.nota == 'Satisfeito'"></ion-icon>
+          <ion-icon name="heart" *ngIf="carro?.nota == 'Muito Satisfeito'"></ion-icon>
+          {{carro?.nota}}
+        </ion-label>
         <ion-button (click)="setaTela(carro?.id);">{{carrosTela}}</ion-button>
       </ion-item>
     </ion-list>
