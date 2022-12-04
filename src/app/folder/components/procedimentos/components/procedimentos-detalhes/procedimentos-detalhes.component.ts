@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { CrudEnum } from 'src/app/folder/folder.enum';
+import { CrudServiceService } from 'src/app/services/crud-service.service';
 
 @Component({
   selector: 'app-procedimentos-detalhes',
@@ -7,8 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProcedimentosDetalhesComponent implements OnInit {
 
-  constructor() { }
+  mecanica: any;
+  @Output() retorno = new EventEmitter<string>();
 
-  ngOnInit() {}
+  constructor(private service: CrudServiceService) { }
+  // O sinal de `+` converte para number
+  ngOnInit(): void {
+    const id = this.service.id;
+    this.service.readById(id, 'mecanicas').subscribe(mecanica => {
+      this.mecanica = mecanica
+    });
+  }
+
+  updatePoduct(): void {
+    this.service.update(this.mecanica, 'mecanicas').subscribe(() => {
+      this.service.presentToast('top', 'Atulizado com sucesso!');
+      this.retorno.emit(CrudEnum.LISTA);
+    });
+  }
+
+  cancel(): void {
+    this.retorno.emit(CrudEnum.LISTA);
+  }
 
 }

@@ -1,3 +1,17 @@
-<p>
-  procedimentos works!
-</p>
+
+<ng-container *ngTemplateOutlet="setaTemplate(carrosTela);">
+  This text is not displayed
+</ng-container>
+
+<ng-template #detalhesTemplate>
+  <app-procedimentos-detalhes></app-procedimentos-detalhes>
+</ng-template>
+
+<ng-template #listaTemplate>
+  <app-procedimentos-lista [tela]="carrosDetalhe" (setaBotao)="setaTela($event);"></app-procedimentos-lista>
+</ng-template>
+
+<ng-template #inserirTemplate>
+  <app-procedimentos-inserir (retorno)="setaTela($event);"></app-procedimentos-inserir>
+</ng-template>
+<ion-button (click)="setaTela(carrosBotao);">{{carrosBotao}}</ion-button>
