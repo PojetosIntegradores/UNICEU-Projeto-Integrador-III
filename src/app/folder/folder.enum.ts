@@ -3,7 +3,7 @@ export enum FolderEnum {
     MECANICAS = 'Mecanicas',
     FAVORITOS = 'Favoritos',
     PORCEDIMENTOS = 'Procedimentos',
-    AVALIACOES = 'Avaliações',
+    AVALIACOES = 'Avaliacoes',
     RECLAMACOES = 'Reclamações',
     AUTOS = 'Autos',
 }

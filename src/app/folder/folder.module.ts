@@ -19,6 +19,15 @@ import { CarrosInserirComponent } from './components/carros/components/carros-in
 import { MecanicasInserirComponent } from './components/mecanicas/components/mecanicas-inserir/mecanicas-inserir.component';
 import { MecanicasDetalesComponent } from './components/mecanicas/components/mecanicas-detales/mecanicas-detales.component';
 import { MecanicasListaComponent } from './components/mecanicas/components/mecanicas-lista/mecanicas-lista.component';
+import { AvaliacoesListarComponent } from './components/avaliacoes/components/avaliacoes-listar/avaliacoes-listar.component';
+import { AvaliacoesInserirComponent } from './components/avaliacoes/components/avaliacoes-inserir/avaliacoes-inserir.component';
+import { AvaliacoesDetalhesComponent } from './components/avaliacoes/components/avaliacoes-detalhes/avaliacoes-detalhes.component';
+import { ReclamacoesListaComponent } from './components/reclamacoes/components/reclamacoes-lista/reclamacoes-lista.component';
+import { ReclamacoesDetalhesComponent } from './components/reclamacoes/components/reclamacoes-detalhes/reclamacoes-detalhes.component';
+import { ReclamacoesInserirComponent } from './components/reclamacoes/components/reclamacoes-inserir/reclamacoes-inserir.component';
+import { ProcedimentosListaComponent } from './components/procedimentos/components/procedimentos-lista/procedimentos-lista.component';
+import { ProcedimentosDetalhesComponent } from './components/procedimentos/components/procedimentos-detalhes/procedimentos-detalhes.component';
+import { ProcedimentosInserirComponent } from './components/procedimentos/components/procedimentos-inserir/procedimentos-inserir.component';
 
 @NgModule({
   imports: [
@@ -30,9 +39,21 @@ import { MecanicasListaComponent } from './components/mecanicas/components/mecan
   declarations: [
     FolderPage,
     AvaliacoesComponent,
+    AvaliacoesListarComponent,
+    AvaliacoesInserirComponent,
+    AvaliacoesDetalhesComponent,
+
     FavoritosComponent,
+
     ProcedimentosComponent,
+    ProcedimentosListaComponent,
+    ProcedimentosDetalhesComponent,
+    ProcedimentosInserirComponent,
+
     ReclamacoesComponent,
+    ReclamacoesListaComponent,
+    ReclamacoesDetalhesComponent,
+    ReclamacoesInserirComponent,
     
     CarrosComponent,
     CarrosDetalhesComponent,
