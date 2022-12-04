@@ -1,3 +1,12 @@
-<p>
-  reclamacoes-detalhes works!
-</p>
+<ion-card>
+  <img alt="Silhouette of mountains" [src]="mecanica?.imgLink" />
+  <ion-card-header>
+    <ion-card-title>{{ mecanica?.name }}</ion-card-title>
+    <ion-card-subtitle>{{ mecanica?.endereco }}</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    <p><strong>Número de procedimentos:</strong> {{ mecanica?.procedimentosRealizados }}</p>
+    <p><strong>Descrição:</strong> {{ mecanica?.descricao }}</p>
+  </ion-card-content>
+</ion-card>

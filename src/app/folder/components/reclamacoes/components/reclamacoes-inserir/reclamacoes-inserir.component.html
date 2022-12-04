@@ -1,3 +1,43 @@
-<p>
-  reclamacoes-inserir works!
-</p>
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Insira a mecanica confiança ou que já tenha realizado algum concerto ou manutenção,  e descrição</ion-card-title>
+    <ion-card-subtitle>Aqui você pode inserir a mecanica que deseja compartilhar informações</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Nome da mecanica</ion-label>
+        <ion-input placeholder="Auto Mecanica" [(ngModel)]="product.name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Endereço</ion-label>
+        <ion-input placeholder="R. Abner Ribeiro Borges..." [(ngModel)]="product.endereco"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Quantidade de procedimentos</ion-label>
+        <ion-input placeholder="20" [(ngModel)]="product.procedimentosRealizados"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Descrição os serviços realizados</ion-label>
+        <ion-input placeholder="descreva como é o atendimento rezumidamente" [(ngModel)]="product.descricao"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Link da imagem da mecanica</ion-label>
+        <ion-input placeholder="Aqui você cola o link da imagem no google mamps" [(ngModel)]="product.imgLink"></ion-input>
+      </ion-item>
+
+    </ion-list>
+    <ion-button (click)="createPoduct();">
+      Inserir Auto
+      <ion-icon slot="end" name="send"></ion-icon>
+    </ion-button>
+    <ion-button (click)="cancel();">
+      <ion-icon name="close-circle"></ion-icon>
+      Cancelar
+    </ion-button>
+  </ion-card-content>
+</ion-card>
