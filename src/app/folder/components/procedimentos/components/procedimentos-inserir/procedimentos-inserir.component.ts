@@ -10,6 +10,8 @@ import { CrudServiceService } from 'src/app/services/crud-service.service';
 export class ProcedimentosInserirComponent {
 
   @Output() retorno = new EventEmitter<string>();
+  carros:any;
+  mecanicas:any;
 
   constructor(private service: CrudServiceService) { }
 
@@ -25,6 +27,14 @@ export class ProcedimentosInserirComponent {
     this.service.create(this.product, 'mecanicas').subscribe(() => {
       this.service.presentToast('top', 'Salvo com sucesso!!!');
       this.retorno.emit(CrudEnum.LISTA);
+    });
+    this.service.read('carros').subscribe(carros =>{
+      this.carros = carros;
+      console.log(carros);
+    })
+    this.service.read('mecanicas').subscribe(mecanicas =>{
+      this.mecanicas = mecanicas;
+      console.log(mecanicas);
     })
   }
 
