@@ -12,22 +12,22 @@
 
       <ion-item>
         <ion-label position="floating">Endereço</ion-label>
-        <ion-input placeholder="R. Abner Ribeiro Borges..." [(ngModel)]="product.endereco"></ion-input>
+        <ion-input placeholder="R. Abner Ribeiro Borges..." [(ngModel)]="product.mecanica"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="floating">Quantidade de procedimentos</ion-label>
-        <ion-input placeholder="20" [(ngModel)]="product.procedimentosRealizados"></ion-input>
+        <ion-input placeholder="20" [(ngModel)]="product.carro"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Link da imagem da mecanica</ion-label>
+        <ion-input placeholder="Aqui você cola o link da imagem no google mamps" [(ngModel)]="product.preco"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="floating">Descrição os serviços realizados</ion-label>
         <ion-input placeholder="descreva como é o atendimento rezumidamente" [(ngModel)]="product.descricao"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label position="floating">Link da imagem da mecanica</ion-label>
-        <ion-input placeholder="Aqui você cola o link da imagem no google mamps" [(ngModel)]="product.imgLink"></ion-input>
       </ion-item>
 
     </ion-list>

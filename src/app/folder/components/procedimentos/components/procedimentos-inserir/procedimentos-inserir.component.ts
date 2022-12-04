@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CrudEnum } from 'src/app/folder/folder.enum';
 import { CrudServiceService } from 'src/app/services/crud-service.service';
 
@@ -7,7 +7,7 @@ import { CrudServiceService } from 'src/app/services/crud-service.service';
   templateUrl: './procedimentos-inserir.component.html',
   styleUrls: ['./procedimentos-inserir.component.scss'],
 })
-export class ProcedimentosInserirComponent implements OnInit {
+export class ProcedimentosInserirComponent {
 
   @Output() retorno = new EventEmitter<string>();
 
@@ -15,14 +15,10 @@ export class ProcedimentosInserirComponent implements OnInit {
 
   product: any = {
     name: '',
-    endereco: '',
-    procedimentosRealizados: '',
+    mecanica: '',
+    carro: '',
+    preco: '',
     descricao: '',
-    imgLink: ''
-  }
-
-  ngOnInit(): void {
-
   }
 
   createPoduct(): void {
