@@ -1,15 +1,15 @@
 <ion-card>
   <ion-card-header>
-    <ion-card-title>Lista de Mecanicas</ion-card-title>
-    <ion-card-subtitle>Aqui estão as mecanicas inseridas por todos</ion-card-subtitle>
+    <ion-card-title>Lista de Reclamações</ion-card-title>
+    <ion-card-subtitle>Aqui estão as reclamações inseridas por todos</ion-card-subtitle>
   </ion-card-header>
   <ion-card-content>
     <ion-list>
       <ion-item *ngFor="let mecanica of mecanicas">
         <ion-thumbnail slot="start">
-          <img alt="Silhouette of mountains" [src]="mecanica?.imgLink" />
+          <img alt="Silhouette of mountains" src="https://davidmelamed.com/wp-content/uploads/2013/11/complain.png"/>
         </ion-thumbnail>
-        <ion-label>{{mecanica?.name}}</ion-label>
+        <ion-label>{{mecanica?.mecanica}}</ion-label>
         <ion-button (click)="setaTela(mecanica?.id);">{{tela}}</ion-button>
       </ion-item>
     </ion-list>

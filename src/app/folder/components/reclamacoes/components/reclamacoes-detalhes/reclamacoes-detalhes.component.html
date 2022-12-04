@@ -1,12 +1,11 @@
 <ion-card>
-  <img alt="Silhouette of mountains" [src]="mecanica?.imgLink" />
+  <img alt="Silhouette of mountains" src="https://davidmelamed.com/wp-content/uploads/2013/11/complain.png" />
   <ion-card-header>
-    <ion-card-title>{{ mecanica?.name }}</ion-card-title>
-    <ion-card-subtitle>{{ mecanica?.endereco }}</ion-card-subtitle>
+    <ion-card-title>{{ mecanica?.mecanica }}</ion-card-title>
+    <ion-card-subtitle>{{ mecanica?.procedimento }}</ion-card-subtitle>
   </ion-card-header>
 
   <ion-card-content>
-    <p><strong>Número de procedimentos:</strong> {{ mecanica?.procedimentosRealizados }}</p>
     <p><strong>Descrição:</strong> {{ mecanica?.descricao }}</p>
   </ion-card-content>
 </ion-card>

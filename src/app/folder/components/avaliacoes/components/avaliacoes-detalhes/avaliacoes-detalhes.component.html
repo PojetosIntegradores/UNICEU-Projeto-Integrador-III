@@ -1,11 +1,17 @@
 <ion-card>
-  <img alt="Silhouette of mountains" [src]="carro?.imgLink" />
+  <img alt="Silhouette of mountains" src="https://png.pngtree.com/element_origin_min_pic/17/03/05/cd79fda9cf21aa4994e5ebfdc53842e8.jpg" />
   <ion-card-header>
-    <ion-card-title>{{ carro?.name }}</ion-card-title>
-    <ion-card-subtitle>{{ carro?.name }} {{ carro?.ano }}</ion-card-subtitle>
+    <ion-card-title>{{ carro?.mecanica }}</ion-card-title>
+    <ion-card-subtitle>{{ carro?.procedimento }}</ion-card-subtitle>
   </ion-card-header>
 
   <ion-card-content>
-    <strong>Descrição</strong> {{ carro?.descricao }}
+    <p>
+      <ion-icon name="heart-empty" *ngIf="carro?.nota == 'Insatisfeito'"></ion-icon>
+      <ion-icon name="heart-half" *ngIf="carro?.nota == 'Satisfeito'"></ion-icon>
+      <ion-icon name="heart" *ngIf="carro?.nota == 'Muito Satisfeito'"></ion-icon>
+      <strong>Nota:</strong> {{ carro?.nota }}
+    </p>
+    <strong>Descrição:</strong> {{ carro?.descricao }}
   </ion-card-content>
 </ion-card>

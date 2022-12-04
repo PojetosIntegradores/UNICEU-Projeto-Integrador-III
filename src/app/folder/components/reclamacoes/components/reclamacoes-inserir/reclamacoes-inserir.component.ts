@@ -10,23 +10,31 @@ import { CrudServiceService } from 'src/app/services/crud-service.service';
 export class ReclamacoesInserirComponent implements OnInit {
 
   @Output() retorno = new EventEmitter<string>();
+  mecanicas:any;
+  procedimentos:any;
 
   constructor(private service: CrudServiceService) { }
 
   product: any = {
-    name: '',
-    endereco: '',
-    procedimentosRealizados: '',
+    mecanica: '',
+    procedimento: '',
+    nota: '',
     descricao: '',
-    imgLink: ''
   }
 
   ngOnInit(): void {
-
+    this.service.read('mecanicas').subscribe(mecanicas =>{
+      this.mecanicas = mecanicas;
+      console.log(mecanicas);
+    });
+    this.service.read('procedimentos').subscribe(procedimentos =>{
+      this.procedimentos = procedimentos;
+      console.log(procedimentos);
+    });
   }
 
   createPoduct(): void {
-    this.service.create(this.product, 'mecanicas').subscribe(() => {
+    this.service.create(this.product, 'reclamacoes').subscribe(() => {
       this.service.presentToast('top', 'Salvo com sucesso!!!');
       this.retorno.emit(CrudEnum.LISTA);
     })
