@@ -1,3 +1,17 @@
-<p>
-  avaliacoes works!
-</p>
+
+<ng-container *ngTemplateOutlet="setaTemplate(carrosTela);">
+  This text is not displayed
+</ng-container>
+
+<ng-template #detalhesTemplate>
+  <app-avaliacoes-detalhes></app-avaliacoes-detalhes>
+</ng-template>
+
+<ng-template #listaTemplate>
+  <app-avaliacoes-listar [carrosTela]="carrosDetalhe" (setaBotao)="setaTela($event);"></app-avaliacoes-listar>
+</ng-template>
+
+<ng-template #inserirTemplate>
+  <app-avaliacoes-inserir (retorno)="setaTela($event);"></app-avaliacoes-inserir>
+</ng-template>
+<ion-button (click)="setaTela(carrosBotao);">{{carrosBotao}}</ion-button>

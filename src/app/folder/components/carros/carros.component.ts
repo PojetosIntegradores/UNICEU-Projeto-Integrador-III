@@ -1,5 +1,5 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { CrudEnum, FolderEnum } from '../../folder.enum';
+import { CrudEnum } from '../../folder.enum';
 
 @Component({
   selector: 'app-carros',
