@@ -16,8 +16,8 @@ export class ProcedimentosDetalhesComponent implements OnInit {
   // O sinal de `+` converte para number
   ngOnInit(): void {
     const id = this.service.id;
-    this.service.readById(id, 'mecanicas').subscribe(mecanica => {
-      this.mecanica = mecanica
+    this.service.readById(id, 'procedimentos').subscribe(mecanica => {
+      this.mecanica = mecanica;
     });
   }
 

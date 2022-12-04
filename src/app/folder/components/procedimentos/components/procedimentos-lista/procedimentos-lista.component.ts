@@ -16,7 +16,7 @@ export class ProcedimentosListaComponent implements OnInit {
   constructor(private service: CrudServiceService) { }
 
   ngOnInit() {
-    this.service.read('mecanicas').subscribe(mecanicas =>{
+    this.service.read('procedimentos').subscribe(mecanicas =>{
       this.mecanicas = mecanicas;
       console.log(mecanicas);
     })
